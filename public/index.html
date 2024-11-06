@@ -4,7 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>HodlInfo - Tickers</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="./style.css" />
+
   </head>
   <body>
     <h1>HodlInfo - Tickers</h1>
@@ -20,19 +21,17 @@
         </tr>
       </thead>
       <tbody id="ticker-table-body">
-        <!-- Data will be populated here by JavaScript -->
       </tbody>
     </table>
 
     <script>
-      // Fetching data from Node.js API and displaying it in the table
       async function fetchTickers() {
         try {
           const response = await fetch("http://localhost:5000/api/vi/tickers");
           const result = await response.json();
 
           const tableBody = document.getElementById("ticker-table-body");
-          tableBody.innerHTML = ""; // Clear previous data
+          tableBody.innerHTML = "";
 
           result.data.forEach((ticker) => {
             const row = document.createElement("tr");
@@ -51,8 +50,6 @@
           console.error("Error fetching tickers:", error);
         }
       }
-
-      // Fetch and display tickers on page load
       fetchTickers();
     </script>
   </body>
