@@ -27,7 +27,7 @@
     <script>
       async function fetchTickers() {
         try {
-          const response = await fetch("http://localhost:5000/api/vi/tickers");
+          const response = await fetch("https://quadass-project.onrender.com/api/vi/tickers");
           const result = await response.json();
 
           const tableBody = document.getElementById("ticker-table-body");
